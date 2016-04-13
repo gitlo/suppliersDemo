@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="eeApp" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Exponential-e Tech Challenge</title>
-
+    <script src="bower_components/angular/angular.min.js""></script>
+    <script src="bower_components/angular-resource/angular-resource.min.js""></script>
+     <script src="js/app.js"></script>
+     <script src="js/controller.js"></script>
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="css/dashboard.css" rel="stylesheet">
 
 </head>
 
-<body>
+<body ng-controller="mainCtrl">
 
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
@@ -48,15 +51,17 @@
             <form>
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="selSupplier">Supplier</label>
-                        <select class="form-control" id="selSupplier">
-                            <option>xxxx</option>
+                        <label for="supplierSelect">Supplier</label>
+                        <select ng-options="supplier as supplier.name for supplier in suppliers" class="form-control"
+                             ng-model="supplierSelect">
+                            <option value="">Please select supplier...</option>
                         </select>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="selProduct">Product</label>
-                        <select class="form-control" id="selProduct">
-                            <option>xxxx</option>
+                        <label for="productSelect">Product</label>
+                         <select ng-options="product as product.name for product in supplierSelect.products"
+                            class="form-control" ng-model="productSelect">
+                            <option value="">Please select product...</option>
                         </select>
                     </div>
                 </div>
@@ -74,11 +79,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>x</td>
-                            <td>xxxx</td>
-                            <td>xxxx</td>
-                            <td>xxxx</td>
+                        <tr ng-if="productSelect">
+                            <td>{{productSelect.id}}</td>
+                            <td>{{supplierSelect.name}}</td>
+                            <td>{{productSelect.name}}</td>
+                            <td>{{productSelect.price}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -88,6 +93,6 @@
 </div>
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/bootstrap.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

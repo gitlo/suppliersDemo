@@ -1,7 +1,3 @@
-# Exponential-e developer technical challenge
-
-We're hoping to see how you approach a challenge and what sort of standards you use in your code so please feel free to be as creative as you like.
-
 ### Instructions
 
 ```

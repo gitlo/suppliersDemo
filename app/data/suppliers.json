@@ -1,0 +1,49 @@
+{
+    "suppliers":
+    [
+        {
+            "id": 1,
+            "name": "New Co Ltd",
+            "products":
+            [
+                {
+                    "id": 1,
+                    "name": "Small wongle",
+                    "price": 5
+                },
+                {
+                    "id": 2,
+                    "name": "Large wongle",
+                    "price": 8
+                },
+                {
+                    "id": 3,
+                    "name": "Super wongle",
+                    "price": 12
+                }                
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Old Co Ltd",
+            "products":
+            [
+                {
+                    "id": 4,
+                    "name": "Small wongle",
+                    "price": 6
+                },
+                {
+                    "id": 5,
+                    "name": "Large wongle",
+                    "price": 9
+                },
+                {
+                    "id": 6,
+                    "name": "Super wongle",
+                    "price": 4
+                }       
+            ]
+        }
+    ]
+}
